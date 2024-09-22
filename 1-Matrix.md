@@ -213,12 +213,6 @@ $$
 
 - 列满秩：n个列向量线性无关
 
-## Elementary Row Transformation / 初等行变换
-
-初等行变换是指对矩阵进行的以下三种操作：
-1. （对换变换）交换两行
-2. （倍乘变换）一行乘以一个非零标量
-3. （倍加变换）用一个非零常数乘以一行，然后加到另一行
 
 ## 计算规则
 
@@ -268,4 +262,82 @@ A^{-1} = \frac{1}{ad-bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}
 $$
 
 如果 $ad-bc = 0$，那么 $A$ 是奇异矩阵，没有逆矩阵。
+
+### 行等价
+
+#### Elementary Row Transformation / 初等行变换
+
+初等行变换是指对矩阵进行的以下三种操作：
+1. （对换变换/Interchange）交换两行
+2. （倍乘变换/Scaling）一行乘以一个非零标量
+3. （倍加变换/Replacement）用一个非零常数乘以一行，然后加到另一行
+
+> 我们可以通过将 $A$ 行转换为 $I$ 找到 $A^{-1}$。
+
+> **初等矩阵（Elementary Matrix）**：通过对单位矩阵 $I$ 进行一次初等行变换得到的矩阵。
+
+每一个初等矩阵 $E$ 都是可逆的。
+
+$$
+\underbrace{E_k \cdots E_2 E_1}_{\text{初等行变换}} A = I_n\\
+\underbrace{E_k \cdots E_2 E_1}_{A^{-1}} A = I_n\\
+A^{-1} = E_k \cdots E_2 E_1
+$$
+
+- 可逆的：初等矩阵代表的是基本的行（或列）操作，而这些操作都是可以撤销的
+- 性质：如果 $E$ 是一个初等矩阵，那么存在另一个同类型的初等矩阵 $E^{-1}$，它可以"撤销" $E$的操作。
+  - $EE^{-1} = I$
+
+矩阵 $A$ 是可逆的 $\Longleftrightarrow$ 存在一系列初等行操作可以将 $A$ 转化为 $I_n$，这也同样可以将 $I_n$ 转化为 $A^{-1}$。
+
+$$
+(A \quad I)\\
+\downarrow\\
+(I \quad A^{-1})
+$$
+
+### 可逆矩阵的性质
+
+令 $A$, $B$ 为 $n\times n$的方阵。以下陈述等价：
+- $A$ 是可逆的
+- $A$ 行等价于一个 $n\times n$ 的 $I_n$
+- $A$ 有 $n$ 个主元
+- $Ax=0$ 只有平凡解
+- $A$ 的列向量线性无关
+- 线性变换 $x \mapsto Ax$ 是一一对应的
+- $Ax=b$ 对于每一个 $b$ 有最少一种解
+- $A$ 的列向量span $\mathbb{R}^n$
+- 线性变换 $x \mapsto Ax: \mathbb{R}^n \mapsto \mathbb{R}^n$ 是满射的
+- 存在 $n\times n$ 的矩阵 $C$ 使得 $CA=I_n$
+- 存在 $n\times n$ 的矩阵 $D$ 使得 $AD=I_n$
+- $A^T$ 是可逆的
+
+### 分块矩阵（Partitioned Matrix）
+
+![](PMatrix.png)
+
+因此我们可以把一个矩阵分成几个小矩阵：
+
+$$
+A = \begin{bmatrix}
+A_{11} & A_{12} & A_{13}\\
+A_{21} & A_{22} & A_{14}
+\end{bmatrix}
+$$
+
+其满足一些性质：
+
+加法：
+
+![](PMatrix_Add.png)
+
+
+数乘：
+
+![](PMatrix_ScalaMulti.png)
+
+乘法：
+
+![](PMatrix_Multi.png)
+
 
