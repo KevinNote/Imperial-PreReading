@@ -385,3 +385,23 @@ $$
     \begin{bmatrix} 0 \\ 1 \\ \vdots \\ 0 \end{bmatrix}, \cdots,
     \begin{bmatrix} 0 \\ 0 \\ \vdots \\ 1 \end{bmatrix}
 \right\}
+$$
+
+### 坐标 Coordinate
+
+**唯一性：** 向量对于子空间都有唯一的坐标  
+我们假设空间 $H$ 有一个基 $B = \{v_1, v_2, \cdots, v_p\}$  
+假设有两种表达方式：
+- $x = c_1 v_1 + c_2 v_2 + \cdots + c_p v_p$
+- $x = d_1 v_1 + d_2 v_2 + \cdots + d_p v_p$
+
+那么 $0 = x - x = (c_1 - d_1) v_1 + (c_2 - d_2) v_2 + \cdots + (c_p - d_p) v_p$
+
+因为 $B$ 是线性无关的，所以 $c_i = d_i$。
+
+**坐标：** 我们假设空间 $H$ 有一个基 $B = \{v_1, v_2, \cdots, v_p\}$  
+向量 $x$ 的坐标是 $x$ 在基 $B$ 中的线性组合的系数。  
+例如 $x = c_1 v_1 + c_2 v_2 + \cdots + c_p v_p$，那么 $c_1, c_2, \cdots, c_p$ 就是 $x$ 的坐标，记做 $[x]_B$。读作 B coordinate vector of x。
+
+**维数 dimension**：非零子空间 $H$ 的维数是 $H$ 的基的元素个数。即对于 $H$ 的basis为 $B_H$，则有 $\text{dim } H = | B_H |$（向量个数）。  
+$\text{dim } \{ 0 \} = 0$
