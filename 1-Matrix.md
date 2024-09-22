@@ -1,5 +1,10 @@
 # Lecture 1：矩阵
 
+## 相容（consistent）与不相容（inconsistent）
+
+方程组就是无解被称为不相容（inconsistent system）  
+有解被称为相容（consistent system）
+
 ## 系数矩阵（Coefficient Matrix）与增广矩阵（Augmented Matrix）
 
 如果考虑线性方程 $2x + 3y = 5$ 和 $3x - 2y = 7$，可以将其写成矩阵形式：
@@ -40,9 +45,9 @@ $$
 \right]
 $$
 
-对于线性方程 $Ax = b$，$A$ 是系数矩阵，$(A \mid b)$ 是增广矩阵。
+对于线性方程 $Ax = b$，$A$ 是**系数矩阵** ，$(A \mid b)$ 是**增广矩阵**。
 
-对于方程组 $Ax = 0$ 也倍称呼为 齐次线性方程组（homogeneous linear system）。
+对于方程组 $Ax = 0$ 也倍称呼为 **齐次线性方程组（homogeneous linear system）**。
 
 ## 矩阵 Echelon Form 行梯形形式
 
@@ -176,3 +181,10 @@ $$
 对于一个 $m \times n$ 的矩阵 $M$（m行n列），$r = \text{Rank}(M)$
 
 - 列满秩：n个列向量线性无关
+
+## Elementary Row Transformation / 初等行变换
+
+初等行变换是指对矩阵进行的以下三种操作：
+1. （对换变换——交换两行
+2. （倍乘变换）一行乘以一个非零标量
+3. （倍加变换）用一个非零常数乘以一行，然后加到另一行
