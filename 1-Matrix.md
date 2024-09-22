@@ -5,6 +5,33 @@
 方程组就是无解被称为不相容（inconsistent system）  
 有解被称为相容（consistent system）
 
+## 线性相关性（Linear dependence）
+
+对于向量集合 $A = \left\{v_1, v_2, ..., v_p \right\}, v \in \mathbb{R}^n$，如果其中一个向量可以表示为其他向量的线性组合，那么这个向量就是线性相关的。即：
+
+$$
+x_1 v_1 + x_2 v_2 + \cdots + x_p v_p = 0
+$$
+
+iff 其有平凡解（即 $x_1 = x_2 = \cdots = x_p = 0$），$A$ 是线性无关。
+
+否则线性相关。
+
+如有非平凡解，即表示一个向量可以被其他向量线性组合表示，那么这个向量就是线性相关的。
+
+> $A = \left\{v_1, v_2, ..., v_p \right\}$，$Ax=0$ 只有零解 $\Longleftrightarrow$ $A$ 是线性无关
+> 
+> $A= \left\{v_1\right\}$，$A$ 是线性无关的 $\Longleftrightarrow$ $v_1 \neq 0$
+> 
+> $A= \left\{v_1, v_2\right\}$，$A$ 是线性相关的 $\Longleftrightarrow$ $v_1 = kv_2$
+> 
+> $|A| = p, v\in \mathbb{R}^d$，如果 $p > d$，那么 $A$ 是线性相关的。 *（抽屉原理）*
+>
+> $|A| = 0$ $\Longleftrightarrow$ 线性相关
+
+
+
+
 ## 系数矩阵（Coefficient Matrix）与增广矩阵（Augmented Matrix）
 
 如果考虑线性方程 $2x + 3y = 5$ 和 $3x - 2y = 7$，可以将其写成矩阵形式：
@@ -185,6 +212,6 @@ $$
 ## Elementary Row Transformation / 初等行变换
 
 初等行变换是指对矩阵进行的以下三种操作：
-1. （对换变换——交换两行
+1. （对换变换）交换两行
 2. （倍乘变换）一行乘以一个非零标量
 3. （倍加变换）用一个非零常数乘以一行，然后加到另一行
