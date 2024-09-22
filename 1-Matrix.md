@@ -420,3 +420,87 @@ $\text{dim } \{ 0 \} = 0$
 
 > 对于 $n$ 列矩阵 $A$ 有 $\text{rank } A + \text{dim Nul } A = n$
 
+## 行列式 Determinant $\Delta$
+
+![](RecursiveDeterminant.png)
+
+对于一个 $n \times n$ 的矩阵 $A$，其行列式记作 $\det A$ 或者 $|A|$。
+$$
+\begin{align}
+\det A
+&=a_{11}\det A_{11}-a_{12}\det A_{12}+a_{13}\det A_{13}-\cdots+(-1)^{1+n}a_{1n}\det A_{1n}
+\\
+&= \sum_{j=1}^{n} (-1)^{1+j} a_{1j} \det A_{1j}
+\end{align}
+$$
+
+### 代数余子式展开（Cofactor Expansion）
+
+> **代数余子式（cofactor）** ：$C_{ij} = (-1)^{i+j} \det A_{ij}$
+
+因此则有
+
+$$
+\begin{align}
+\det A
+&=a_{11}\det A_{11}-a_{12}\det A_{12}+a_{13}\det A_{13}-\cdots+(-1)^{1+n}a_{1n}\det A_{1n}
+\\
+&=a_{11}C_{11}+a_{12}C_{12}+a_{13}C_{13}+\cdots+a_{1n}C_{1n}
+\end{align}
+$$
+
+$$
+\begin{align}
+\det A
+&= \sum_{j=1}^{n} (-1)^{1+j} a_{1j} \det A_{1j}
+\\
+&=\sum_{j=1}^{n} a_{1j} C_{1, j}
+\end{align}
+$$
+
+上述也被称为**第一行代数余子式展开**（cofactor expansion across the 1st row of $A$）。
+
+> $n \times n$ 矩阵 $A$ 的行列式可以通过**任意行**的余子式展开或**任意列**的余子式展开来计算。
+> 
+> 使用第 $i$ 行的余子式进行展开的公式是：
+> 
+> $$
+> \det A = a_{i1}C_{i1} + a_{i2}C_{i2} + ... + a_{in}C_{in}
+> $$
+> 
+> 沿第j列的余子式展开公式是：
+> 
+> $$
+> \det A = a_{1j}C_{ij} + a_{2j}C_{2j} + ... + a_{nj}C_{nj}
+> $$
+
+
+> 如果 $A$ 是一个三角矩阵，那么 $\det A$ 就是对角线元素的乘积。
+> ![](Triangle.png)
+> 如上方的两个三角矩阵，其行列式为 $a_{11}a_{22}a_{33}a_{44}$
+
+### 性质
+
+考虑行变换
+
+$$
+\begin{align}
+A \stackrel{replacement}{——\longrightarrow} B
+&\qquad& \det A &= \det B
+&\qquad& \det B &= \det A
+\\
+A \stackrel{interchange}{——\longrightarrow} B
+&\qquad& \det A &= -\det B
+&\qquad& \det B &= -\det A
+\\
+A \stackrel{scaling (k)}{——\longrightarrow} B
+&\qquad& \det A &= \frac{1}{k} \det B
+&\qquad& \det B &= k \det A
+\end{align}
+$$
+
+$A$ 是可逆的 $\Longleftrightarrow$ $\det A \neq 0$
+
+$\det A^T = \det A$
+
+令 $A$ 和 $B$ 为 $n \times n$ 的方阵，则有 $\det AB = \det A \det B$
