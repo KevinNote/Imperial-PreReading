@@ -1,4 +1,4 @@
-# Lecture 1: 矩阵
+# Lecture 1：矩阵
 
 ## 系数矩阵（Coefficient Matrix）与增广矩阵（Augmented Matrix）
 
