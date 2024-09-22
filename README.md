@@ -1,5 +1,5 @@
-# 线性代数 Algebra
+# Imperial Prereading
 
 啊啊啊啊啊啊啊啊啊啊啊啊要寄掉了啊！
 
-1. [矩阵](./1-Matrix.md)
+* [Ch4 线性代数](./LinearAlgebra/README.md)

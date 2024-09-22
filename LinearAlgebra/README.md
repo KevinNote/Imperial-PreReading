@@ -1,4 +1,4 @@
-# Lecture 1：矩阵
+# Chapter 4. 线性代数
 
 ## 相容（consistent）与不相容（inconsistent）
 
@@ -504,3 +504,69 @@ $A$ 是可逆的 $\Longleftrightarrow$ $\det A \neq 0$
 $\det A^T = \det A$
 
 令 $A$ 和 $B$ 为 $n \times n$ 的方阵，则有 $\det AB = \det A \det B$
+
+
+### 克拉默法则 Cramer's Rule
+
+引入新记号：$A_i(b)$ 表示将 $A$ 矩阵第 $i$ 列替换为 $b$ 的矩阵。
+
+$$
+A = \begin{bmatrix}
+a_{1} & \cdots & a_{i} & \cdots &  a_{n} \\
+\end{bmatrix}
+\\\Downarrow\\
+A_i(b) = \begin{bmatrix}
+a_{1} & \cdots & b & \cdots &  a_{n} \\
+\end{bmatrix}
+$$
+
+对于 $n\times n$ 的可逆矩阵 $A$，$b\in \mathbb{R}^n$，其 unique solution 为
+
+$$
+x_i = \frac{\det A_i(b)}{\det A}
+$$
+
+### 证明
+
+$$
+A = (a_1, \cdots, a_n)\\
+I = (e_1, \cdots, e_n)\\
+Ax = b\\
+\\
+\begin{align}
+A\cdot I_i(x) &= A(e_1, \cdots, x, \cdots, e_n)\\
+&= (Ae_1, \cdots, Ax, \cdots, Ae_n)\\
+&= (a_1, \cdots, b, \cdots, a_n)\\
+&= A_i(b)
+\end{align}
+\\
+\begin{align}
+\det (A\cdot I_i(x)) &= \det A_i(b)\\
+\det A\cdot \det I_i(x) &= \det A_i(b)\\
+\det I_i(x) &= \frac{\det A_i(b)}{\det A} \\
+x &= \frac{\det A_i(b)}{\det A}
+\end{align}
+$$
+
+因此 $x_i = \frac{\det A_i(b)}{\det A}$
+
+### 逆矩阵 $A^{-1}$
+
+对于 $n\times n$ 的可逆矩阵 $A$，其逆矩阵 $A^{-1}$ 可以通过克拉默法则来计算。
+
+$$
+A^{-1} = \frac{1}{\det A} \text{adj} A
+$$
+
+其中 $\text{adj} A$ 是 $A$ 的伴随矩阵（adjoint matrix）。
+
+$$
+\text{adj} A = \begin{bmatrix}
+C_{11} & C_{21} & \cdots & C_{n1} \\
+C_{12} & C_{22} & \cdots & C_{n2} \\
+\vdots & \vdots & \ddots & \vdots \\
+C_{1n} & C_{2n} & \cdots & C_{nn} \\
+\end{bmatrix}
+$$
+
+其中 $C_{ij}$ 是 $A$ 的代数余子式。
