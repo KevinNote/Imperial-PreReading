@@ -334,10 +334,54 @@ $$
 
 数乘：
 
-![](PMatrix_ScalaMulti.png)
+![](PMatrix_ScalarMulti.png)
 
 乘法：
 
 ![](PMatrix_Multi.png)
 
 
+## 子空间 Subspace
+
+$\mathbb{R}^d$ 的子空间 $H$ 是 $\mathbb{R}^d$ 的一个子集，它满足以下条件：
+- $H$ 包含 $\mathbf{0}$
+- （加法运算封闭）对于任意 $u, v \in H$，$u+v \in H$
+- （数乘运算封闭）对于任何标量 $\lambda$，$\lambda u \in H$
+
+
+$\mathbb{R}^n$ 是自身的子空间。  
+Zero subspace $\{0\}$，也是子空间。
+
+### 列空间 Column Space
+
+> 矩阵 $A$ 的**列空间**（Column Space）Col $A$ 是 $A$ 的列向量的所有线性组合的集合。
+
+$A = [a_{1}, a_2, \cdots, a_n]$，其中 $a_i$ 是 $A$ 的列向量。
+
+Col $A$ = $\text{Span}\{a_1, a_2, \cdots, a_n\}$
+
+对于 $m \times n$ 的矩阵 $A$，Col $A$ 是 $\mathbb{R}^m$ 的子空间。
+
+### 零空间 Null Space
+
+> 矩阵 $A$ 的**零空间**（Null Space）Nul $A$ 是齐次系统 $Ax = 0$ 的所有解的集合。
+
+一个 $m \times n$ 的矩阵 $A$ 的零空间是 $\mathbb{R}^n$ 的子空间。
+
+## Basis
+
+子空间 $H$ 的**基**（Basis）是 $H$ 的一个**线性无关**的生成集。
+
+> $\mathbb{R}^n$ 的 **标准基（Standard Basis）** 是一个集合，其中每个基向量都是 $e_i$，其中 $e_i$ 是一个 $n$ 维向量，其第 $i$ 个元素为1，其他元素为0。
+
+$$
+e_1 = \begin{bmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{bmatrix}, e_2 = \begin{bmatrix} 0 \\ 1 \\ \vdots \\ 0 \end{bmatrix}, \cdots, e_n = \begin{bmatrix} 0 \\ 0 \\ \vdots \\ 1 \end{bmatrix}
+$$
+
+$$
+\mathbb{R}^n = \text{Span}
+\left\{
+    \begin{bmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{bmatrix},
+    \begin{bmatrix} 0 \\ 1 \\ \vdots \\ 0 \end{bmatrix}, \cdots,
+    \begin{bmatrix} 0 \\ 0 \\ \vdots \\ 1 \end{bmatrix}
+\right\}
