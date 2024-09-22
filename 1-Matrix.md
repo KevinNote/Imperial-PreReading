@@ -204,15 +204,6 @@ $$
 > **平凡解（Trivial Solution）**：对于齐次系统 $Ax = 0$，其一定包含一个解 $x=0$，称为平凡解。
 而除了平凡解之外（非零解）的解称为非平凡解。
 
-## Rank
-
-其实，矩阵的秩（Rank）就是矩阵的行梯形形式中非零行的数量。  
-也就是Reduced Row Echelon Form先导1的个数。
-
-对于一个 $m \times n$ 的矩阵 $M$（m行n列），$r = \text{Rank}(M)$
-
-- 列满秩：n个列向量线性无关
-
 
 ## 计算规则
 
@@ -311,6 +302,12 @@ $$
 - 存在 $n\times n$ 的矩阵 $C$ 使得 $CA=I_n$
 - 存在 $n\times n$ 的矩阵 $D$ 使得 $AD=I_n$
 - $A^T$ 是可逆的
+- $A$ 的列形成一组 $\mathbb{R}^n$ 基
+- Col $A$ = $\mathbb{R}^n$
+- $\text{dim Col } A = n$
+- $\text{rank } A = n$
+- $\text{Nul } A = \{ 0 \}$
+- $\text{dim Nul } A = \{ 0 \}$
 
 ### 分块矩阵（Partitioned Matrix）
 
@@ -387,6 +384,10 @@ $$
 \right\}
 $$
 
+令 $H$ 是 $\mathbb{R}^n$ 的 $p$ 维子空间，那么 $H$ 中任意 $p$ 个线性无关的向量都是 $H$ 的基。
+
+在 $H$ 中的任意 $p$ 个向量的集合，只要其能 span 成 $H$，那么这个集合就是 $H$ 的基。
+
 ### 坐标 Coordinate
 
 **唯一性：** 向量对于子空间都有唯一的坐标  
@@ -405,3 +406,17 @@ $$
 
 **维数 dimension**：非零子空间 $H$ 的维数是 $H$ 的基的元素个数。即对于 $H$ 的basis为 $B_H$，则有 $\text{dim } H = | B_H |$（向量个数）。  
 $\text{dim } \{ 0 \} = 0$
+
+
+## 秩 Rank
+
+矩阵 $A$ 的**秩**（Rank）是 $A$ 的列空间的维数。
+
+因为 Pivot Column构成了构成了 Col A 的一组基，所以 $\text{rank } A$ 是 Pivot Column 的个数。
+
+也就是 RREF 中主元的个数。
+
+> 零空间的维数 = 自由未知量的个数
+
+> 对于 $n$ 列矩阵 $A$ 有 $\text{rank } A + \text{dim Nul } A = n$
+
