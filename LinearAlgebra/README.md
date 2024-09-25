@@ -576,3 +576,57 @@ C_{1n} & C_{2n} & \cdots & C_{nn} \\
 $$
 
 其中 $C_{ij}$ 是 $A$ 的代数余子式。
+
+### 面积
+
+对于 $2\times 2$ 的矩阵，$|\det A|$ 是其平行四边形（parallelogram）面积
+对于 $3\times 3$ 的矩阵，$|\det A|$ 是其六面体（parallelepiped）的体积
+
+如果将线性变化 $T$ 看作一个函数 $T: M\to T(M)$，则行列式则可以看作 $M$ 的面积mapto $T(M)$ 的面积。
+
+> 对于 $T: \mathbb{R}^2\to \mathbb{R}^2$ ，即变换矩阵 $ A : \mathbb{R}^{2\times 2}$，有 $S_{T(M)}=|\det A|\cdot S_M$
+> 对于 $T: \mathbb{R}^3\to \mathbb{R}^3$ ，即变换矩阵 $ A : \mathbb{R}^{3\times 3}$，有 $\text{Vol}_{T(M)}=|\det A|\cdot \text{Vol}_M$
+
+## 向量空间 Vector Space
+
+加法交换群（Abelian Group/Commutative Group）：对于非零集合 $V$，对于任意元素 $u, v \in V$ 如果运算 $+$ 满足：
+
+- $u+v\in V$
+- (Communication) $u+v=v+u$
+- (Association) $(u+v)+w=u+(v+w)$
+- (Indentity) $u+0=0$
+- (Inversible) $\forall u \in S, \exist -u. u+(-u)=0$ 
+
+
+
+在上述条件下，如过满足对于标量$c, d$
+
+- $cu\in V$
+- (Distribution) $c(u+v) = cu+cv$
+- (Distribution) $(c+d)u = cu+du$
+- (Association) $c(du) = (cd) u$
+- (Identity) $1u = u$
+
+### Subspace
+
+如果 $v_1, ..., v_p$ 在向量空间 $V$，则 $H=\text{Span}\{ v_1, ..., v_p\}$ 是 $V$ 的子空间
+我们称 $H$ 是子空间 spanned by $\{ v_1, ..., v_p\}$。
+$\{ v_1, ..., v_p\}$ 被称为 $H$ 的一个生成集（spanning set）
+
+#### 矩阵的 Null Space
+
+对于矩阵 $A\in \mathbb{R}^{m\times n}$
+$$
+\text{Nul } A = \{ x : x \in \mathbb{R}^n, Ax = 0\}
+\text{ where } A \in \mathbb{R}^{m\times n}
+$$
+$\text{Nul } A$ 是 $\mathbb{R}^n$ 的子空间
+
+> $\text{Nul } A = \{ 0 \}\Leftrightarrow Ax=0$  只有平凡解 $\to$ $A$ 有逆 $A^{-1}$
+>
+> $\to$ 满🐍
+
+#### 矩阵的 Column Space
+
+$A\in \mathbb{R}^{m\times n}, \text{Col }A$ 是 $\mathbb{R}^m$ 的子空间
+
