@@ -422,6 +422,37 @@ $\text{dim } \{ 0 \} = 0$
 
 ## 行列式 Determinant $\Delta$
 
+### LU 分解 LU Decomposition
+
+对于方阵 $A$通过适当的行变换可以分解成一个[下三角矩阵](https://zh.wikipedia.org/wiki/下三角矩阵) $L$ 与[上三角矩阵](https://zh.wikipedia.org/wiki/上三角矩阵) $U$ 的乘积，即
+$$
+A = LU\\
+e.g. A=\begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33} \\
+\end{bmatrix} = 
+
+\begin{bmatrix}
+l_{11} &      0 & 0 \\
+l_{21} & l_{22} & 0 \\
+l_{31} & l_{32} & l_{33} \\
+\end{bmatrix}
+
+\begin{bmatrix}
+u_{11} & u_{12} & u_{13} \\
+     0 & u_{22} & u_{23} \\
+     0 &      0 & u_{33} \\
+\end{bmatrix}
+$$
+并不是每个矩阵都有 LU 分解
+
+而 $\det A = \det L \times \det U$
+
+
+
+### 计算
+
 ![](RecursiveDeterminant.png)
 
 对于一个 $n \times n$ 的矩阵 $A$，其行列式记作 $\det A$ 或者 $|A|$。
@@ -479,7 +510,7 @@ $$
 > ![](Triangle.png)
 > 如上方的两个三角矩阵，其行列式为 $a_{11}a_{22}a_{33}a_{44}$
 
-### 性质
+### 行变换对于行列式性质
 
 考虑行变换
 
@@ -632,6 +663,22 @@ $A\in \mathbb{R}^{m\times n}, \text{Col }A$ 是 $\mathbb{R}^m$ 的子空间
 
 
 
+## 行列式的特性
+
+### 计算性质
+
+- 若行列式某一行全为 0，则行列式为 0
+
+- $n$ 阶行列式两行对应元素相等，则行列式为 0
+
+
+
+- 如果方阵特征值 $\Delta\neq 0$ $\Leftrightarrow$ 方阵可逆 $\Leftrightarrow$  方阵有唯一解
+- 如果方阵特征值 $\Delta\neq 0$ $\Leftrightarrow$ 方阵是singular $\Leftrightarrow$  方阵有无解或无穷解
+- 对于齐次方程 $Ax=0$，当且仅当 $\Delta A = 0$ 有非 0 解
+
+
+
 ## 特征值 Eigenvalue & 特征向量 Eigenvector
 
 对于 $n$ 阶矩阵 $A$，其映射可能会使几个非零向量 $\xi$ 只是长度或者方向变更，而不是旋转等操作，例如 $[1, 2] \to [2, 4]$，即使 $\xi' =\lambda \xi, \lambda \in \mathbb{R}$，我们则称 $\xi$ 为特征向量，$\lambda$ 为特征向量
@@ -669,3 +716,6 @@ $$
 $$
 
 
+## 正交矩阵 Orthogonal Matrix
+
+对于矩阵 $Q\in \mathbb{R}^{n\times n}$ 
