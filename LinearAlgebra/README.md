@@ -891,17 +891,21 @@ b_1\\b_2\\\vdots\\b_n
 $$
 我们称矩阵 $P$ 为过渡矩阵（Transition matrix）
 
-![](/Users/kevin/Desktop/ImperialPrerea/transition_matrix.svg)
+![](./transition_matrix.svg)
 
 过渡矩阵是满秩矩阵，因此其是可逆矩阵。
 
-![](/Users/kevin/Desktop/ImperialPrerea/transition_matix_inv.svg)
+![](./transition_matix_inv.svg)
 
 参考：https://www.matongxue.com/parts/4585
 
-### 相似矩阵
+### 相似矩阵 Similar Matrix
 
 对于两个 $n$ 阶方阵 $A, B$，如存在可逆矩阵 $P$使得 $B = P^{-1}AP$ 则称 $A \sim B$
+
+我们可以将 $P$ 看作一个基变换操作，只不过其作用于变换矩阵上。
+
+![](./similar.png)
 
 有一些基础性质
 
