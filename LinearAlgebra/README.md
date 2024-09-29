@@ -681,7 +681,7 @@ $A\in \mathbb{R}^{m\times n}, \text{Col }A$ 是 $\mathbb{R}^m$ 的子空间
 
 ## 特征值 Eigenvalue & 特征向量 Eigenvector
 
-对于 $n$ 阶矩阵 $A$，其映射可能会使几个非零向量 $\xi$ 只是长度或者方向变更，而不是旋转等操作，例如 $[1, 2] \to [2, 4]$，即使 $\xi' =\lambda \xi, \lambda \in \mathbb{R}$，我们则称 $\xi$ 为特征向量，$\lambda$ 为特征向量
+对于 $n$ 阶矩阵 $A$，其映射可能会使几个非零向量 $\xi$ 只是长度或者方向变更，而不是旋转等操作，例如 $[1, 2] \to [2, 4]$，即使 $\xi' =\lambda \xi, \lambda \in \mathbb{R}$，我们则称 $\xi$ 为特征向量，$\lambda$ 为特征值
 $$
 A\xi=\lambda\xi
 $$
