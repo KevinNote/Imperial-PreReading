@@ -772,7 +772,9 @@ $$
 
 ## 旋转矩阵 Rotation Matrix
 
-对于一个二维矩阵，我们如果期望将向量逆时针旋转 $\theta$，二维矩阵为：
+### 2 维
+
+我们如果期望将向量逆时针旋转 $\theta$，二维矩阵为：
 $$
 \begin{bmatrix}
 \cos \theta & -\sin \theta \\
@@ -796,7 +798,7 @@ y
 \end{bmatrix}
 $$
 
-对于 3 维，则为
+### 3 维
 
 沿着 $x_1$ 轴旋转：
 $$
@@ -822,5 +824,52 @@ $$
 \cos \theta & -\sin \theta & 0\\
 \sin \theta & \cos \theta & 0\\
 0 & 0 & 1\\
+\end{bmatrix}
+$$
+
+## 反射矩阵 Reflection Matrix
+
+### 2维
+
+对于2维度，对于 $x_1$ 的反射
+$$
+\begin{bmatrix}
+1 & 0\\
+0 & -1
+\end{bmatrix}
+$$
+对于 $x_2$ 的反射
+$$
+\begin{bmatrix}
+-1 & 0\\
+0 & 1
+\end{bmatrix}
+$$
+关于 $x_1=x_2$ 的反射
+
+
+$$
+\begin{bmatrix}
+0 & 1\\
+1 & 0
+\end{bmatrix}
+$$
+
+### 3维
+
+对于 $x_1x_2$ 反射
+$$
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0 \\
+0 & 0 & -1
+\end{bmatrix}
+$$
+对于单位法向量 $n=(a, b, c)^T$的反射
+$$
+\begin{bmatrix}
+1-2a^2 & -2ab & -2ac\\
+-2ab & 1-2b^2 & -2bc \\
+-2ac & -2bc & 1-2c^2
 \end{bmatrix}
 $$
