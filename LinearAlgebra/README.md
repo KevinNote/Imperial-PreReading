@@ -740,4 +740,87 @@ $$
 
 ## 正交矩阵 Orthogonal Matrix
 
-对于矩阵 $Q\in \mathbb{R}^{n\times n}$ 
+对于矩阵 $Q\in \mathbb{R}^{n\times n}$ ，如果 $Q^TQ=I_n$ ，则称 $Q$ 为正交矩阵，即 $Q^{-1}=Q^T$
+
+$\det Q = \pm 1$
+
+行（列）向量组为n维单位正交向量组
+
+* 向量组中有n个向量
+* 每个向量的长度(模)为1
+* 任意两个不同的向量之间都正交(垂直),即它们的内积为0
+
+单位矩阵是正交矩阵，但是正交矩阵不一定是单位矩阵，例如
+$$
+\begin{bmatrix}
+\cos \theta & -\sin\theta \\
+\sin \theta &  \cos \theta
+\end{bmatrix}
+
+\begin{bmatrix}
+\cos \theta & \sin\theta \\
+-\sin \theta &  \cos \theta
+\end{bmatrix}
+$$
+正交矩阵 $Q$ 形成的正交变换（orthogonal tranformation），如果其作用于向量 $v, u$ 上，则有：
+
+- 模长不变：$|v| = |Qv|, |u| = |Qu|$
+- 角度不变：$\angle uv= \angle (Qu) (Qv)$
+- 因此点积不变：$u\cdot v = (Qu) \cdot (Qv)$
+- 高维空间中，正交变换保持超体积不变。
+  - 由于其$\det Q=\pm 1$，因此当 $\det = 1$ 时，保持方向和体积。当 $\det = -1$ 时，方向相反，体积不变，
+
+## 旋转矩阵 Rotation Matrix
+
+对于一个二维矩阵，我们如果期望将向量逆时针旋转 $\theta$，二维矩阵为：
+$$
+\begin{bmatrix}
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta
+\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}
+x' \\
+y'
+\end{bmatrix}
+=
+\begin{bmatrix}
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+$$
+
+对于 3 维，则为
+
+沿着 $x_1$ 轴旋转：
+$$
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & \cos \theta & -\sin \theta \\
+0 &\sin \theta & \cos \theta
+\end{bmatrix}
+$$
+
+
+沿着 $x_2$ 轴旋转：
+$$
+\begin{bmatrix}
+\cos \theta & 0 & -\sin \theta\\
+0 & 1 & 0 \\
+\sin \theta &0 & \cos \theta
+\end{bmatrix}
+$$
+沿着 $x_3$ 轴旋转：
+$$
+\begin{bmatrix}
+\cos \theta & -\sin \theta & 0\\
+\sin \theta & \cos \theta & 0\\
+0 & 0 & 1\\
+\end{bmatrix}
+$$
