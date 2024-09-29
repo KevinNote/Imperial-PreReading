@@ -624,9 +624,48 @@ $\text{Nul } A$ 是 $\mathbb{R}^n$ 的子空间
 
 > $\text{Nul } A = \{ 0 \}\Leftrightarrow Ax=0$  只有平凡解 $\to$ $A$ 有逆 $A^{-1}$
 >
-> $\to$ 满🐍
+> $\to$ 满射
 
 #### 矩阵的 Column Space
 
 $A\in \mathbb{R}^{m\times n}, \text{Col }A$ 是 $\mathbb{R}^m$ 的子空间
+
+
+
+## 特征值 Eigenvalue & 特征向量 Eigenvector
+
+对于 $n$ 阶矩阵 $A$，其映射可能会使几个非零向量 $\xi$ 只是长度或者方向变更，而不是旋转等操作，例如 $[1, 2] \to [2, 4]$，即使 $\xi' =\lambda \xi, \lambda \in \mathbb{R}$，我们则称 $\xi$ 为特征向量，$\lambda$ 为特征向量
+$$
+A\xi=\lambda\xi
+$$
+对其求解我们可以轻松得到：
+$$
+\begin{align}
+A\xi &= \lambda\xi\\
+A\xi &= \lambda I_n\xi\\
+A\xi - \lambda I_n\xi &= 0\\
+(A-\lambda I_n)\xi&=0\\
+\because \xi &\neq 0\\
+\therefore A-\lambda I_n &= 0\\
+(\lambda I_n -A)\xi &= 0
+\end{align}
+$$
+考虑为求使齐次方程 $\lambda(I_n-A) \xi = 0$ 有非零解的 $\lambda$，因此则有其行列式为 0。即
+$$
+(\lambda I_n -A)\xi = 0 \Leftrightarrow |\lambda I_n -A|=0
+$$
+我们称 $|\lambda I_n -A|=0$ 为特征方程（characteristic equation）
+$$
+|\lambda I_n -A|=0\Leftrightarrow
+\left|
+\begin{matrix}
+	\lambda - a_{11} & -a_{12} & -a_{13} &\cdots & -a_{1n}\\
+  - a_{21} & \lambda-a_{22} & -a_{23} &\cdots & -a_{2n}\\
+  - a_{31} & -a_{32} & \lambda -a_{33} &\cdots & -a_{3n}\\
+  \vdots & \vdots & \vdots & \vdots & \vdots \\
+  - a_{n1} & -a_{n2} & -a_{n3} &\cdots & \lambda -a_{nn}\\
+\end{matrix}
+\right| = 0
+$$
+
 
