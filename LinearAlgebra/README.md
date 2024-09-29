@@ -873,3 +873,41 @@ $$
 -2ac & -2bc & 1-2c^2
 \end{bmatrix}
 $$
+
+## 相似矩阵 Similar Matrix
+
+### 基变换 Change of Basis
+
+对于向量空间 $V$，存在两组基 $\mathcal{B}_1=\{ u_1, u_2, ..., u_n\}$ 和 $\mathcal{B}_2=\{ v_1, v_2, ..., v_n\}$，对于向量 $x\in V$，我们可以将其使用任意基表示，例如 $[x]_{\mathcal{B}_1}=a_1u_1+a_2u_2+\cdots +a_nu_n$ 和 $[x]_{\mathcal{B}_2}=b_1v_1+b_2v_2+\cdots +b_nv_n$。
+
+我们期望找到系数 $a_i$ 和 $b_i$ 之间的关系。如果我们令 $A = [a_1, a_2, \cdots, a_n]^T, B = [b_1, b_2, \cdots, b_n]^T$，因此我们期望找到矩阵 $P$，使得
+$$
+\begin{bmatrix}
+a_1\\a_2\\\vdots\\a_n
+\end{bmatrix} = P
+\begin{bmatrix}
+b_1\\b_2\\\vdots\\b_n
+\end{bmatrix}
+$$
+我们称矩阵 $P$ 为过渡矩阵（Transition matrix）
+
+![](/Users/kevin/Desktop/ImperialPrerea/transition_matrix.svg)
+
+过渡矩阵是满秩矩阵，因此其是可逆矩阵。
+
+![](/Users/kevin/Desktop/ImperialPrerea/transition_matix_inv.svg)
+
+参考：https://www.matongxue.com/parts/4585
+
+### 相似矩阵
+
+对于两个 $n$ 阶方阵 $A, B$，如存在可逆矩阵 $P$使得 $B = P^{-1}AP$ 则称 $A \sim B$
+
+有一些基础性质
+
+* 自反性 Reflexity：$A\sim A$
+* 对称性 Symmetry：$A\sim B$ 则 $B\sim A$
+* 传递性 Transitivity：$A\sim B, B\sim C \Rightarrow A\sim C$
+
+
+
