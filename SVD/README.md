@@ -30,6 +30,8 @@ M &= U\Sigma V^T\\
 \end{align}
 $$
 
+即，旋转，缩放，旋转
+
 ![](SVD_ARG.png)
 
 ![](SVD_ARG_2.png)
@@ -94,7 +96,7 @@ X &= \sigma_1u_1v_1^T + \sigma_2u_2v_2^T + \cdots + \sigma_mu_mv_m^T\\
 $$
 
 
-如考虑上述情况，我们可以，我们可以将本来 $m$ 项的求和切断(truncate)称 $r$ 项（rank？），因此我们可以获得一个近似的 $X$，我们称其为 economy SVD
+如考虑上述情况，我们可以，我们可以将本来 $m$ 项的求和切断(truncate)称 $r$ 项（$\text{rank } X$），因此我们可以获得一个近似的 $X$，我们称其为 economy SVD
 $X = U\Sigma V^T  \approx \tilde{U}\tilde{\Sigma}\tilde{V}$
 
 其本质在描述如下过程：
