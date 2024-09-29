@@ -674,9 +674,31 @@ $A\in \mathbb{R}^{m\times n}, \text{Col }A$ 是 $\mathbb{R}^m$ 的子空间
 
 
 - 如果方阵特征值 $\Delta\neq 0$ $\Leftrightarrow$ 方阵可逆 $\Leftrightarrow$  方阵有唯一解
-- 如果方阵特征值 $\Delta\neq 0$ $\Leftrightarrow$ 方阵是singular $\Leftrightarrow$  方阵有无解或无穷解
+- 如果方阵特征值 $\Delta= 0$ $\Leftrightarrow$ 方阵是singular $\Leftrightarrow$  方阵有无解或无穷解
 - 对于齐次方程 $Ax=0$，当且仅当 $\Delta A = 0$ 有非 0 解
 
+```mermaid
+graph TB;
+    Ax0[齐次方程 Ax = 0]
+    Axb[非齐次方程 Ax = b]
+    Det[特征值 det A]
+    Nul[零空间 Nul A]
+    Rank[秩 rank A]
+
+    Inv{矩阵可逆}
+    NInv{矩阵不可逆}
+
+    Rank <--满秩--> Inv
+    Rank <--不满秩--> NInv
+    Inv <--有唯一解--> Axb
+    NInv <--有无穷解或无解--> Axb
+    Det <--=0--> NInv
+    Det <--!=0--> Inv
+    Ax0 <--只有平凡解--> Inv
+    NInv <--有非0解--> Ax0
+    Nul <--={0}--> Inv
+    
+```
 
 
 ## 特征值 Eigenvalue & 特征向量 Eigenvector
