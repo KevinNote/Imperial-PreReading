@@ -96,3 +96,48 @@ $$
 \end{align}
 \right.
 $$
+
+Linearity 线性性质：$\mathbb{E}[aX + bY] = a\mathbb{E}[X] + b\mathbb{E}[Y]$
+
+**Covarience**: 
+
+$$
+\begin{align}
+\text{Cov}_{X, Y}[x, y] &:= \mathbb{E}_{X, Y}[(x-\mathbb{E}_X[x])(y-\mathbb{E}_Y[y])] \\
+&:= \mathbb{E}_{X, Y}[xy + \mathbb{E}_X[x]\mathbb{E}_Y[y]
+- y\mathbb{E}_X[x]  - x\mathbb{E}_Y[y]] \\
+
+&:= \mathbb{E}_{X, Y}[xy + \mathbb{E}_X[x]\mathbb{E}_Y[y]
+- \mathbb{E}_{X,Y}[x\mathbb{E}_Y[y]] - \mathbb{E}_{X,Y}[y\mathbb{E}_X[x]]] \\
+
+\end{align}
+\\
+考虑 \mathbb{E}_Y[y] 和 \mathbb{E}_X[x] 为常数\\
+
+\begin{align}
+\text{Cov}_{X, Y}[x, y] 
+&:= \mathbb{E}_{X, Y}[xy + \mathbb{E}_X[x]\mathbb{E}_Y[y]
+- \mathbb{E}_{X,Y}[x\mathbb{E}_Y[y]] - \mathbb{E}_{X,Y}[y\mathbb{E}_X[x]]] \\
+&:= \mathbb{E}_{X, Y}[xy + \mathbb{E}_X[x]\mathbb{E}_Y[y]
+- \mathbb{E}_{X}[x]\mathbb{E}_Y[y] - \mathbb{E}_{Y}[y]\mathbb{E}_X[x]]\\
+&:= \mathbb{E}_{X, Y}[xy - \mathbb{E}_{X}[x]\mathbb{E}_Y[y] ]\\
+&:= \mathbb{E}_{X, Y}[xy] - \mathbb{E}_{X}[x]\mathbb{E}_Y[y]
+\end{align}
+$$
+
+即
+
+$$
+
+\begin{align}
+\text{Cov}_{X, Y}[x, y] &:= \mathbb{E}_{X, Y}[(x-\mathbb{E}_X[x])(y-\mathbb{E}_Y[y])] \\
+&:= \mathbb{E}_{X, Y}[xy] - \mathbb{E}_{X}[x]\mathbb{E}_Y[y]
+\end{align}
+$$
+
+对于多维情况，有
+
+$$
+\mathbf{x}\in \mathbb{R}^D, \mathbf{y}\in \mathbb{R}^E\\
+\text{Cov}_{X, Y}[\mathbf{x}, \mathbf{y}] = \mathbb{E}_{X, Y}[\mathbf{x}\mathbf{y}^T] - \mathbb{E}_{X}[\mathbf{x}]\mathbb{E}_Y[\mathbf{y}]^T = \text{Cov}_{X, Y}[\mathbf{y}, \mathbf{x}]^T \in \mathbb{R}^{D\times E}
+$$
