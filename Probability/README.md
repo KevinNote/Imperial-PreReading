@@ -211,3 +211,55 @@ $$
 $$
 
 成对差异和提供了一个几何解释，表明方差可以通过计算点对之间的距离或点与中心的距离来理解。
+
+### 计算规则
+
+$$
+\begin{align}
+& \mathbb{E}[x+y] = \mathbb{E}[x] + \mathbb{E}[y]\\
+& \mathbb{E}[x-y] = \mathbb{E}[x] - \mathbb{E}[y]\\
+& \mathbb{V}[x+y] = \mathbb{V}[x] + \mathbb{V}[y]
+  + \text{Conv}[x, y] + \text{Conv}[y, x]\\
+& \mathbb{V}[x-y] = \mathbb{V}[x] + \mathbb{V}[y]
+  - \text{Conv}[x, y] - \text{Conv}[y, x]\\
+\end{align}
+$$
+
+对于 affine transformation $y = Ax + b$，有
+
+$$
+\begin{align}
+\mathbb{E}_Y[y] &= \mathbb{E}_X[Ax + b] = A\mathbb{E}_X[x] + b\\
+\mathbb{V}_Y[y] &= \mathbb{V}_X[Ax + b] = A\mathbb{V}_X[x]A^T 
+ = A\Sigma A^T\\
+\\
+\end{align}
+$$
+
+对于 covarience:
+
+$$
+\begin{align}
+\text{Cov}_{X,Y}[x, y]
+&= \mathbb{E}_{X, Y}[xy] - \mathbb{E}_X{[x]}\mathbb{E}_Y{[y]}^T\\
+&= \mathbb{E}[x(Ax+b)^T] - \mathbb{E}{[x]}\mathbb{E}{[Ax+b]}^T\\
+&= \mathbb{E}[xA^Tx^T+xb^T] - \mu\mathbb{E}{[Ax+b]}^T\\
+&= \mathbb{E}[xx^T]A^T + \mathbb{E}[x]b^T - \mu(A^T\mu^T + b^T)\\
+&= \mathbb{E}[xx^T]A^T + \mu b^T - A^T\mu\mu^T - \mu b^T\\
+&= (\mathbb{E}[xx^T]-\mu\mu^T)A^T + \mu b^T - \mu b^T\\
+&= (\mathbb{E}[xx^T]-\mu\mu^T)A^T \\
+&= \Sigma A^T
+\end{align}
+$$
+
+### 独立变量
+
+对于两个随机变量 $X, Y$ 是独立，iff $p(X, Y) = p(X) p(Y)$
+
+* $p(y\mid x) = p(y)$
+* $p(x\mid y) = p(x)$
+* $\mathbb{V}_{X, Y}[x, y] = \mathbb{V}_{X}[x] + \mathbb{V}_{Y}[y]$
+* $\text{Conv}_{X, Y}[x, y] = 0$
+
+**Conditional Independence**: 2个随机变量 $X, Y$，其与 $Z$ 条件独立 iff $p(x, y\mid z) = p(x\mid z)p(y\mid z)$
+
