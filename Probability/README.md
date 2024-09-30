@@ -191,3 +191,23 @@ Empirical Covarience:
 $$
 \Sigma = \frac{1}{N}\sum_{n=1}^N (x_n - \bar{x})(x_n - \bar{x})^T
 $$
+
+### 不同方差的表示
+
+$$
+\mathbb{V}_X[x] = \mathbb{E}_X[(x-\mu)^2]
+$$
+
+标准定义直观但需要两次遍历数据（先计算平均值，再计算方差）。
+
+raw-score raw-score formula for variance
+$$
+\mathbb{V}_X[x] = \mathbb{E}_X[x^2] - \mathbb{E}_X[x]^2
+$$
+原始分数公式只需一次遍历，但可能有数值稳定性问题。
+
+$$
+\frac{1}{N^2} \sum_{i,j=1}^{N} (x_i - x_j)^2 = 2 \left[ \frac{1}{N} \sum_{i=1}^{N} x_i^2 - \left( \frac{1}{N} \sum_{i=1}^{N} x_i \right)^2 \right]
+$$
+
+成对差异和提供了一个几何解释，表明方差可以通过计算点对之间的距离或点与中心的距离来理解。
