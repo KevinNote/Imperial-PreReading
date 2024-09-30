@@ -81,7 +81,7 @@ $$
 对于 $\mathbf{x} \in \mathbb{R}^D$，其均值
 
 $$
-\bar{\mathbf{x}} = 
+\text{Mean}_X(x) = 
 \mathbb{E}_X[\mathbf{x}] = \begin{bmatrix}
 \mathbb{E}_X[x_1]\\
 \mathbb{E}_X[x_2]\\
@@ -158,4 +158,36 @@ $$
 
 \end{align}
 
+$$
+
+![](correlated.png)
+
+将两个变量的数据点绘制在二维坐标系中，协方差实际上反映了这些点形成的"椭圆云"的形状和方向。
+- 正协方差表示椭圆主轴倾向于从左下到右上
+- 负协方差则相反。
+
+协方差的绝对值越大，椭圆越细长；接近于0时，则更接近圆形。
+
+方差可以看作是协方差的特殊情况 - 即变量与自身的协方差。在几何上,这相当于将二维椭圆投影到对应的轴上。
+
+**Correlation**：
+$$
+
+\textrm{Corr}[x, y] = \frac{\textrm{Cov}[x, y]}{\sqrt{\mathbb{V}[x]\mathbb{V}[y]}}\in[-1, 1]
+$$
+
+相关系数是协方差除以两个变量标准差的乘积,可以理解为"标准化"后的协方差。它的值介于-1到1之间,反映了椭圆的"瘦长"程度。
+
+上述描述通常用于表示实际统计学中的数据集。但是我们无法实现真正意义上的统计学，我们可以对已观测到量进行经验（Empirical）估计。
+
+Empirical Mean: 
+$$
+\bar{x} = \frac{1}{N}\sum_{i=1}^N x_i
+$$
+
+
+Empirical Covarience:
+
+$$
+\Sigma = \frac{1}{N}\sum_{n=1}^N (x_n - \bar{x})(x_n - \bar{x})^T
 $$
