@@ -141,3 +141,21 @@ $$
 \mathbf{x}\in \mathbb{R}^D, \mathbf{y}\in \mathbb{R}^E\\
 \text{Cov}_{X, Y}[\mathbf{x}, \mathbf{y}] = \mathbb{E}_{X, Y}[\mathbf{x}\mathbf{y}^T] - \mathbb{E}_{X}[\mathbf{x}]\mathbb{E}_Y[\mathbf{y}]^T = \text{Cov}_{X, Y}[\mathbf{y}, \mathbf{x}]^T \in \mathbb{R}^{D\times E}
 $$
+
+**Varience**: 
+$$
+\begin{align}
+\mathbb{V}_X(x) = \text{Var}[X] &= \text{Cov}_X[x, x]\\
+&= \mathbb{E}[(x-\mu)(x-\mu)^T]\\
+&= \mathbb{E}[xx^T] - \mathbb{E}[x]\mathbb{E}[x]^T
+&=
+\begin{bmatrix}
+    \text{Conv}[x_1, x_1] & \text{Conv}[x_1, x_2] & \cdots & \text{Conv}[x_1, x_D]\\
+    \text{Conv}[x_2, x_1] & \text{Conv}[x_2, x_2] & \cdots & \text{Conv}[x_2, x_D]\\
+    \vdots & \vdots & \ddots & \vdots\\
+    \text{Conv}[x_D, x_1] & \text{Conv}[x_D, x_2] & \cdots & \text{Conv}[x_D, x_D]\\
+\end{bmatrix}
+
+\end{align}
+
+$$
