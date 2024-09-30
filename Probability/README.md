@@ -50,4 +50,49 @@ P(a\leq X \leq b) = \int_a^b f(x)dx \text{  where  } a, b \in \mathbb{R}^D
 $$
 
 
-**Cumulative Distribution Function/CDF, 累积分布函数**：$F(x) = P(X\leq x)$
+**Cumulative Distribution Function/CDF, 累积分布函数**：$F_X(x) = P(X\leq x)$，其中 $X = [X_1, X_2, \cdots, X_D]^T, x = [x_1, x_2, \cdots, x_D]^T$。
+
+$$
+F_X(x) = \int_{-\infty}^{x_1}\cdots\int_{-\infty}^{x_D} F_X(z_1, \cdots, z_D)dz_1\cdots dz_D
+$$
+
+Naive Bayes
+
+$$
+\underbrace{P(x|y)}_{\text{Posterior}} = \frac{\overbrace{P(y|x)}^{\text{Likelihood}}\overbrace{P(x)}^{\text{Prior}}}{\underbrace{P(y)}_{\text{Evidence}}}
+$$
+
+## 6.4 数学期望
+
+$$
+\mathbb{E}_X[g(x)] = \int_{\mathcal{X}} g(x)f(x)dx\\
+\mathbb{E}_X[g(x)] = \sum_{x\in \mathcal{X}} g(x)f(x)dx\\
+
+
+\mathbb{E}_X[g(\mathbf{x})] = \begin{bmatrix}
+\mathbb{E}_X[g(x_1)]\\
+\mathbb{E}_X[g(x_2)]\\
+\vdots\\
+\mathbb{E}_X[g(x_D)]
+\end{bmatrix}
+\in \mathbb{R}^D
+$$
+
+对于 $\mathbf{x} \in \mathbb{R}^D$，其均值
+
+$$
+\bar{\mathbf{x}} = 
+\mathbb{E}_X[\mathbf{x}] = \begin{bmatrix}
+\mathbb{E}_X[x_1]\\
+\mathbb{E}_X[x_2]\\
+\vdots\\
+\mathbb{E}_X[x_D]
+\end{bmatrix}
+\\
+\mathbb{E}_{X_d}[x_d] := \left\{
+\begin{align}
+& \int_\mathcal{X} x_d p(x_d) \mathrm{d}x_d \\
+& \sum_{x_i \in \mathcal{X}} x_i p(x_d = x_i)
+\end{align}
+\right.
+$$
