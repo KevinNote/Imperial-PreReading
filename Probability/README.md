@@ -1,6 +1,6 @@
 # Chapter 6. 概率论
 
-## 基本定义 (Sec 6.1)
+## Sec 6.1 基本定义
 
 **Sample Space** $\Omega$: 包含随机试验所有可能结果的集合。
 例如对于投骰子，$\Omega = \{1, 2, 3, 4, 5, 6\}$。
@@ -28,3 +28,26 @@ $$
 $$
 P_X(S) = P(X \in S) = P(X^{-1}(S)) = P(\{\omega \in \Omega: X(\omega)\in S\})
 $$
+
+## Sec 6.2 Discrete & Continuous Prob.
+
+### Discrete Probability
+
+**Probability Mass Function, PMF, 概率质量函数**：如果 $\mathcal{T}$ 是离散空间，则 $x\in \mathcal{T}, P(X= x)$ 表示 $X$ 取值为 $x$ 的概率。
+
+对于离散概率，其可以表示为 Joint Proability，即 $P(X=x, Y=y) = P(X=x \cap Y = y) = \frac{n_{ij}}{N}$。
+
+### Continuous Probability
+
+**Probability Density Function, PDF, 概率密度函数**：如果 $\mathcal{T}$ 是连续空间，则 。
+
+
+$$
+\text{PDF: } f: \mathbb{R}^D \to \mathbb{R}\\
+\forall x \in \mathbb{R}^D, P(x) \in [0, 1] \\
+\int_{\mathbb{R}^D} f(x)dx = 1 \\
+P(a\leq X \leq b) = \int_a^b f(x)dx \text{  where  } a, b \in \mathbb{R}^D
+$$
+
+
+**Cumulative Distribution Function/CDF, 累积分布函数**：$F(x) = P(X\leq x)$
